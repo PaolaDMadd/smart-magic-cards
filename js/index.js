@@ -71,7 +71,37 @@ function getShuffled() {
     cardElement.style.left = `${positionFromLeft}px`;
     cardsWrapper.append(cardElement);
   });
+}
+
+// sort the deck of cards ordering suits before values
+function doMagic() {
+  let a, b;
+
+  function suitCompare(a, b) {
+    let suitValues = {
+      hearts: 0,
+      spades: 1,
+      diamonds: 2,
+      clubs: 3
+    };
+    return suitValues[a] - suitValues[b];
+  }
+  cards.sort((a, b) => suitCompare(a.suit, b.suit) || a.value - b.value);
+
+  cardsWrapper.innerHTML = "";
+
+  cards.forEach((card, i) => {
+    const positionFromLeft = i * 25;
+    const cardElement = document.createElement("div");
+    cardElement.setAttribute("data-value", card.value);
+    cardElement.classList.add("card", `${card.suit}-${card.value}`);
+    cardElement.style.left = `${positionFromLeft}px`;
+    cardsWrapper.append(cardElement);
+  });
+}
+
 
 document.getElementById('start-game').addEventListener('click', startGame);
   //my EventListeners
 document.getElementById("Shuffle").addEventListener("click", getShuffled);
+document.getElementById("Magic").addEventListener("click", doMagic);
