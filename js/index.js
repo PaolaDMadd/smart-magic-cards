@@ -45,6 +45,7 @@ function createButtons() {
   }
 }
 
+
 // Function to start the game by clearing the wrapper, creating
 // and appending the buttons and all the cards to the DOM
 function startGame() {
@@ -100,8 +101,17 @@ function doMagic() {
   });
 }
 
+//make Appear/Disappear deck of cards
+function hideShow() {
+  if (cardsWrapper.classList.contains("hidden")) {
+    cardsWrapper.classList.remove("hidden");
+  } else {
+    cardsWrapper.classList.add("hidden");
+  }
+}
 
 document.getElementById('start-game').addEventListener('click', startGame);
   //my EventListeners
 document.getElementById("Shuffle").addEventListener("click", getShuffled);
 document.getElementById("Magic").addEventListener("click", doMagic);
+document.getElementById("Show-Hide").addEventListener("click", hideShow);
