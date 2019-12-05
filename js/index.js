@@ -52,4 +52,26 @@ function startGame() {
   createCards();
 }
 
+const a = cards;//just to make code more readable
+function getShuffled() {
+  var j, x, i;
+  for (i = a.length - 1; i > 0; i--) {
+    j = Math.floor(Math.random() * (i + 1));
+    x = a[i];
+    a[i] = a[j];
+    a[j] = x;
+  }
+
+  cardsWrapper.innerHTML = ""; //to empty the previous array
+  cards.forEach((card, i) => {
+    const positionFromLeft = i * 25;
+    const cardElement = document.createElement("div");
+    cardElement.setAttribute("data-value", card.value);
+    cardElement.classList.add("card", `${card.suit}-${card.value}`);
+    cardElement.style.left = `${positionFromLeft}px`;
+    cardsWrapper.append(cardElement);
+  });
+
 document.getElementById('start-game').addEventListener('click', startGame);
+  //my EventListeners
+document.getElementById("Shuffle").addEventListener("click", getShuffled);
