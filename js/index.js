@@ -1,20 +1,24 @@
-const suit = 'hearts';
+const allFourSuit = ['hearts', "spades", "diamonds", "clubs"]; // Sam variable for all suits;
 const cardsWrapper = document.querySelector('.cards-wrapper');
 
+const cards = [];
 function createCards() {
-  const cards = [];
+  
   // Create an array with objects containing the value and the suit of each card
-  for (let i = 1; i <= 13; i += 1) {
-    const cardObject = {
-      value: i,
-      suit,
-    };
-    cards.push(cardObject);
-  }
+  for (let x = 0, x < allFourSuits.length; x += 1) {
+    const suitsIndex = allFourSuits[x];
+        for (let i = 1; i <= 13; i += 1) {
+          const cardObject = {
+            value: i,
+            suit: suitsIndex
+          };
+          cards.push(cardObject);
+        }
+      }
 
   // For each dataObject, create a new card and append it to the DOM
   cards.forEach((card, i) => {
-    const positionFromLeft = i * 15;
+    const positionFromLeft = i * 25;
     const cardElement = document.createElement('div');
     cardElement.setAttribute('data-value', card.value);
     cardElement.classList.add('card', `${card.suit}-${card.value}`);
