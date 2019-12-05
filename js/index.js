@@ -1,11 +1,11 @@
-const allFourSuit = ['hearts', "spades", "diamonds", "clubs"]; // Sam variable for all suits;
+const allFourSuit = ["hearts", "spades", "diamonds", "clubs"]; // Sam variable for all suits;
 const cardsWrapper = document.querySelector('.cards-wrapper');
 
 const cards = [];
 function createCards() {
   
   // Create an array with objects containing the value and the suit of each card
-  for (let x = 0, x < allFourSuits.length; x += 1) {
+  for (let x = 0; x < allFourSuits.length; x += 1) {
     const suitsIndex = allFourSuits[x];
         for (let i = 1; i <= 13; i += 1) {
           const cardObject = {
