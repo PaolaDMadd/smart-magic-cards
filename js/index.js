@@ -1,4 +1,4 @@
-const allFourSuits = ["hearts", "spades", "diamonds", "clubs"]; // Sam variable for all suits;
+const allFourSuits = ["hearts", "spades", "diamonds", "clubs"]; // Same variable for all suits, and changed from string to array;
 const cardsWrapper = document.querySelector('.cards-wrapper');
 
 const cards = [];
