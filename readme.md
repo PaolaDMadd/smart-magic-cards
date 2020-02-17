@@ -1,5 +1,10 @@
+
+
+
+
+
 # Smart Magic Cards
-Join Smart by performing a simple magic trick.
+this exercise has hees concived by Smart team I have added some components.
 
 ### Requirements
 - Make sure all 4 suits of cards are rendered. There are 13 cards in each suit (♥,   ♣, ♦, ♠).
